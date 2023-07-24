@@ -1,0 +1,28 @@
+.container {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 48px;
+  color: #c1ff70;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.button {
+  padding: 3px;
+  width: 80px;
+  border: none;
+  background-color: #ffffff;
+  color: #0d1444;
+  cursor: pointer;
+  border-radius: 15px;
+}
