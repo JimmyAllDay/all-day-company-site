@@ -3,13 +3,12 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './navbar.module.css';
+import Button from '@/components/button/Button';
+import DarkmodeToggle from '@/components/darkmodeToggle/DarkmodeToggle';
+import { ThemeContext } from '../../../context/ThemeContext';
+import { useContext } from 'react';
 
 const links = [
-  {
-    id: 1,
-    title: 'Home',
-    url: '/',
-  },
   {
     id: 2,
     title: 'Portfolio',
@@ -38,10 +37,18 @@ const links = [
 ];
 
 export default function Navbar() {
+  const { mode } = useContext(ThemeContext);
+
+  const logoThemeStyles = `${styles.logoContainer} ${
+    mode === 'dark' ? styles.darkTheme : styles.lightTheme
+  }`;
+
   return (
     <div className={styles.container}>
-      <Link href="/" className={styles.logo}>
-        <h1>All Day</h1>
+      <Link href="/">
+        <div className={logoThemeStyles}>
+          <h1 className={styles.logo}>All Day</h1>
+        </div>
       </Link>
       <div className={styles.links}>
         {links.map((link) => (
@@ -49,12 +56,8 @@ export default function Navbar() {
             {link.title}
           </Link>
         ))}
-        <button
-          onClick={() => console.log('logged out')}
-          className={styles.button}
-        >
-          Logout
-        </button>
+        <Button label="Logout" func={() => console.log('clicked log out')} />
+        <DarkmodeToggle />
       </div>
     </div>
   );

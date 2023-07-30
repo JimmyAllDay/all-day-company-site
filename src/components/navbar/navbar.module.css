@@ -5,16 +5,31 @@
   align-items: center;
 }
 
+.logoContainer {
+  width: 211px;
+  height: 75px;
+}
+
 .logo {
-  font-weight: bold;
   font-size: 48px;
+}
+
+.darkTheme {
   color: #c1ff70;
+}
+
+.lightTheme {
+  color: #000000;
 }
 
 .links {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.link:hover {
+  color: white;
 }
 
 .button {

@@ -4,6 +4,7 @@ import Navbar from '@/components/navbar/Navbar';
 import './globals.css';
 
 import localFont from 'next/font/local';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 // Font files can be colocated inside of `app`
 const akkuratMono = localFont({
@@ -24,11 +25,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={akkuratMono.className}>
-        <div className="container">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <ThemeProvider>
+          <div className="container">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
