@@ -4,12 +4,25 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import testImage from '../../../../public/allDayNavLogo-White.png';
 
+async function getData(id) {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    return notFound();
+  }
+
+  return res.json();
+}
+
 const BlogPost = async ({ params }) => {
+  const data = await getData(params.id);
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <div className={styles.info}>
-          <h1 className={styles.title}>Blog Entry Title</h1>
+          <h1 className={styles.title}>{data.title}</h1>
           <p className={styles.desc}>Blog entry description</p>
           <div className={styles.author}>
             <Image
@@ -27,7 +40,7 @@ const BlogPost = async ({ params }) => {
         </div>
       </div>
       <div className={styles.content}>
-        <p className={styles.text}>Content</p>
+        <p className={styles.text}>{data.body}</p>
       </div>
     </div>
   );

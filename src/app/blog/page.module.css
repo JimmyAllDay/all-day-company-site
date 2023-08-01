@@ -3,20 +3,22 @@
   align-items: center;
   gap: 50px;
   margin-bottom: 50px;
+  border: 1px solid white;
 }
 
 .image {
-  object-fit: cover;
 }
 
 .content {
+  border: 1px solid white;
 }
 
 .title {
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
 .desc {
-  font-size: 18px;
+  font-size: 14px;
   color: #999;
 }
