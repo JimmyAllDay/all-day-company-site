@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import testImage from '../../../../public/allDayNavLogo-White.png';
 
 async function getData(id) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  const res = await fetch(`${process.env.BASE_URL}/api/posts/${id}`, {
     cache: 'no-store',
   });
 
@@ -23,24 +23,24 @@ const BlogPost = async ({ params }) => {
       <div className={styles.top}>
         <div className={styles.info}>
           <h1 className={styles.title}>{data.title}</h1>
-          <p className={styles.desc}>Blog entry description</p>
+          <p className={styles.desc}>{data.desc}</p>
           <div className={styles.author}>
             <Image
-              src=""
+              src={data.image}
               alt=""
               width={40}
               height={40}
               className={styles.avatar}
             />
-            <span className={styles.username}>username</span>
+            <span className={styles.username}>{data.username}</span>
           </div>
         </div>
         <div className={styles.imageContainer}>
-          <Image src={testImage} alt="" className={styles.image} />
+          <Image src={data.image} alt="" className={styles.image} />
         </div>
       </div>
       <div className={styles.content}>
-        <p className={styles.text}>{data.body}</p>
+        <p className={styles.text}>{data.content}</p>
       </div>
     </div>
   );

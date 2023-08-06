@@ -4,8 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import testImage from '../../../public/allDayNavLogo-White.png';
 
+export const metadata = {
+  title: 'All Day - Blog',
+  description: 'Tales from the web.',
+};
+
 async function getData() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+  const res = await fetch(`${process.env.BASE_URL}/api/posts`, {
     cache: 'no-store',
   });
   if (!res.ok) {
@@ -23,7 +28,7 @@ export default async function Blog() {
       <div>
         {data.map((item) => {
           return (
-            <Link href={`/blog/${item.id}`} key={item.id}>
+            <Link href={`/blog/${item._id}`} key={item._id}>
               <div className={styles.container}>
                 <div className={styles.imageContainer}>
                   <Image

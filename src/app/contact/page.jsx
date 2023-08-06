@@ -4,8 +4,9 @@ import Button from '@/components/button/Button';
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'Lama Dev Contact Information',
-  description: 'This is Contact Page',
+  title: 'All Day - Contact',
+  description:
+    'Launch tiny fragments of information through the sky direct to our computers.',
 };
 
 const Contact = () => {

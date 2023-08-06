@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './button.module.css';
-import { ThemeContext } from '../../../context/ThemeContext';
+import { ThemeContext } from '../../context/ThemeContext';
 import { useContext } from 'react';
 
 export default function Button({ label, url, func }) {

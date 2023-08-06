@@ -3,6 +3,12 @@ import styles from './page.module.css';
 import Image from 'next/image';
 import Button from '@/components/button/Button';
 
+export const metadata = {
+  title: 'All Day - About',
+  description:
+    'We make... how do you say... various things. Complex, big-brain stuff.',
+};
+
 export default function About() {
   return (
     <div className={styles.container}>

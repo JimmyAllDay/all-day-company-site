@@ -5,7 +5,7 @@ import Image from 'next/image';
 import styles from './navbar.module.css';
 import Button from '@/components/button/Button';
 import DarkmodeToggle from '@/components/darkmodeToggle/DarkmodeToggle';
-import { ThemeContext } from '../../../context/ThemeContext';
+import { ThemeContext } from '../../context/ThemeContext';
 import { useContext } from 'react';
 
 const links = [
