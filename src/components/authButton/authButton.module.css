@@ -1,0 +1,35 @@
+.buttonDark {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+}
+
+.buttonDark:hover {
+  color: black;
+  background-color: white;
+}
+
+.buttonLight {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+}
+
+.buttonLight:hover {
+  color: #e8e8e8;
+  background-color: black;
+}

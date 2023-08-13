@@ -4,15 +4,10 @@ import Navbar from '@/components/navbar/Navbar';
 import './globals.css';
 import localFont from 'next/font/local';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
-// Font files can be colocated inside of `app`
 const akkuratMono = localFont({
   src: './akkurat-mono-webfont.woff',
-});
-
-const akkurat = localFont({
-  src: './akkurat-webfont.woff',
-  weight: '200',
 });
 
 export const metadata = {
@@ -23,16 +18,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={akkuratMono.className}>
-        <ThemeProvider>
-          <div className="container">
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
-        </ThemeProvider>
-      </body>
-    </html>
+    <UserProvider>
+      <html lang="en">
+        <body className={akkuratMono.className}>
+          <ThemeProvider>
+            <div className="container">
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </ThemeProvider>
+        </body>
+      </html>
+    </UserProvider>
   );
 }

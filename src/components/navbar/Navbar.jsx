@@ -3,10 +3,11 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './navbar.module.css';
-import Button from '@/components/button/Button';
+import AuthButton from '@/components/authButton/AuthButton';
 import DarkmodeToggle from '@/components/darkmodeToggle/DarkmodeToggle';
 import { ThemeContext } from '../../context/ThemeContext';
 import { useContext } from 'react';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 const links = [
   {
@@ -29,15 +30,11 @@ const links = [
     title: 'Contact',
     url: '/contact',
   },
-  {
-    id: 6,
-    title: 'Dashboard',
-    url: '/dashboard',
-  },
 ];
 
 export default function Navbar() {
   const { mode } = useContext(ThemeContext);
+  const { user, error, isLoading } = useUser();
 
   const logoThemeStyles = `${styles.logoContainer} ${
     mode === 'dark' ? styles.darkTheme : styles.lightTheme
@@ -56,7 +53,12 @@ export default function Navbar() {
             {link.title}
           </Link>
         ))}
-        <Button label="Logout" func={() => console.log('clicked log out')} />
+        {user && (
+          <Link href="/dashboard" className={styles.link}>
+            Dashboard
+          </Link>
+        )}
+        <AuthButton />
         <DarkmodeToggle />
       </div>
     </div>
