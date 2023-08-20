@@ -36,14 +36,11 @@
   flex: 1;
   height: 300px;
   position: relative;
-  background-color: black;
+  overflow: hidden;
 }
 
 .image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
 .content {

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './page.module.css';
 import Link from 'next/link';
-import Image from 'next/image';
-import testImage from '../../../public/allDayNavLogo-White.png';
+import ImageWithFallback from '@/components/imageWithFallback/ImageWithFallback';
+import limitWords from '@/utils/helperFunctions';
 
 export const metadata = {
   title: 'All Day - Blog',
@@ -28,21 +28,23 @@ export default async function Blog() {
       <div>
         {data.map((item) => {
           return (
-            <Link href={`/blog/${item._id}`} key={item._id}>
-              <div className={styles.container}>
-                <div className={styles.imageContainer}>
-                  <Image
-                    src={testImage}
-                    width={370}
-                    height={370}
-                    alt=""
-                    className={styles.image}
-                  />
-                </div>
-                <div className={styles.content}>
-                  <h1 className={styles.title}>{item.title}</h1>
-                  <p className={styles.desc}>{item.body}</p>
-                </div>
+            <Link
+              href={`/blog/${item._id}`}
+              key={item._id}
+              className={styles.container}
+            >
+              <div className={styles.imageContainer}>
+                <ImageWithFallback
+                  src={item.image}
+                  fill={true}
+                  alt=""
+                  className={styles.image}
+                />
+              </div>
+              <div className={styles.content}>
+                <h1 className={styles.title}>{item.title}</h1>
+                <p className={styles.desc}>{item.desc}</p>
+                <p className={styles.text}>{limitWords(item.content, 30)}</p>
               </div>
             </Link>
           );

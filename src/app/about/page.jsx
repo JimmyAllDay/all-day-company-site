@@ -1,30 +1,25 @@
 import React from 'react';
 import styles from './page.module.css';
-import Image from 'next/image';
 import Button from '@/components/button/Button';
+import ThemeMessageBox from '@/components/themeMessageBox/ThemeMessageBox';
+import ImageWithFallback from '@/components/imageWithFallback/ImageWithFallback';
 
 export const metadata = {
   title: 'All Day - About',
-  description:
-    'We make... how do you say... various things. Complex, big-brain stuff.',
+  description: 'We make... how do you say... various things.',
 };
 
 export default function About() {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <Image
+        <ImageWithFallback
           src="https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           fill={true}
           alt=""
           className={styles.img}
         />
-        <div className={styles.imgText}>
-          <h1 className={styles.imgTitle}>We are digital storytellers who</h1>
-          <h1 className={styles.imgDesc}>
-            handcraft award-winning digital experiences
-          </h1>
-        </div>
+        <ThemeMessageBox message="We are digital story tellers who craft award winning experiences" />
       </div>
       <div className={styles.textContainer}>
         <div className={styles.item}>

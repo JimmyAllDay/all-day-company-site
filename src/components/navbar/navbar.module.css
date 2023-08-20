@@ -10,18 +10,6 @@
   height: 75px;
 }
 
-.logo {
-  font-size: 48px;
-}
-
-.darkTheme {
-  color: #c1ff70;
-}
-
-.lightTheme {
-  color: #000000;
-}
-
 .links {
   display: flex;
   align-items: center;
@@ -29,7 +17,7 @@
 }
 
 .link:hover {
-  color: white;
+  color: var(--link-hover);
 }
 
 .button {
@@ -40,4 +28,16 @@
   color: #0d1444;
   cursor: pointer;
   border-radius: 15px;
+}
+
+.darkTheme {
+  font-size: 48px;
+  color: var(--dark-accent);
+  transition: 1s;
+}
+
+.lightTheme {
+  font-size: 48px;
+  color: var(--light-text-color);
+  transition: 1s;
 }

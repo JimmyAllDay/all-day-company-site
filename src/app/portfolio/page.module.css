@@ -29,6 +29,7 @@
   height: 400px;
   position: relative;
   background-size: cover !important;
+  color: var(--dark-text-color);
 }
 
 .item:nth-child(1) {
@@ -52,6 +53,6 @@
 }
 
 .item:hover {
-  color: #ffffff;
-  border: 5px solid #ffffff;
+  color: var(--link-hover);
+  border: 5px solid var(--link-hover);
 }

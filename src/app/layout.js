@@ -1,7 +1,7 @@
 //import { Inter } from 'next/font/google';
 import Footer from '@/components/footer/Footer';
 import Navbar from '@/components/navbar/Navbar';
-import './globals.css';
+import '@/styles/globals.css';
 import localFont from 'next/font/local';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { UserProvider } from '@auth0/nextjs-auth0/client';

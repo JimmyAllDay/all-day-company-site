@@ -21,6 +21,13 @@
   gap: 10px;
 }
 
+.socialDark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--dark-accent);
+}
+
 .icon {
   opacity: 0.8;
   cursor: pointer;

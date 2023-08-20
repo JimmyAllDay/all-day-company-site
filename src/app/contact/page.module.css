@@ -14,7 +14,7 @@
 
 .content {
   display: flex;
-  align-items: center;
+  align-items: top;
   gap: 100px;
 }
 
@@ -22,6 +22,11 @@
   flex: 1;
   height: 500px;
   position: relative;
+}
+
+.image {
+  object-fit: contain;
+  margin-bottom: auto;
 }
 
 .form {

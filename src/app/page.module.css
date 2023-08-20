@@ -42,11 +42,6 @@
 }
 
 .link {
-  color: #ffffff;
   margin-left: auto;
   font-size: 24px;
-}
-
-.link:hover {
-  color: #c1ff70;
 }

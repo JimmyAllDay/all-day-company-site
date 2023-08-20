@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './page.module.css';
-import Image from 'next/image';
+import ImageWithFallback from '@/components/imageWithFallback/ImageWithFallback';
 import { notFound } from 'next/navigation';
 import testImage from '../../../../public/allDayNavLogo-White.png';
 
@@ -25,18 +25,24 @@ const BlogPost = async ({ params }) => {
           <h1 className={styles.title}>{data.title}</h1>
           <p className={styles.desc}>{data.desc}</p>
           <div className={styles.author}>
-            <Image
+            <ImageWithFallback
               src={data.image}
               alt=""
-              width={40}
-              height={40}
+              width={50}
+              height={50}
               className={styles.avatar}
             />
             <span className={styles.username}>{data.username}</span>
           </div>
         </div>
         <div className={styles.imageContainer}>
-          <Image src={data.image} alt="" className={styles.image} />
+          <ImageWithFallback
+            src={data.image}
+            alt=""
+            width={350}
+            height={350}
+            className={styles.image}
+          />
         </div>
       </div>
       <div className={styles.content}>

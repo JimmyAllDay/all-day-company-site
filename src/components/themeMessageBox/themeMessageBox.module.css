@@ -1,0 +1,19 @@
+.messageContainer {
+  position: absolute;
+  width: 350px;
+  word-wrap: break-word;
+  top: 20px;
+  left: 20px;
+  background-color: var(--light-text-color);
+  padding: 5px;
+  color: var(--light-bg-color);
+  transition-duration: 1s;
+}
+
+.dark {
+  background-color: var(--dark-accent);
+  color: black;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
+}

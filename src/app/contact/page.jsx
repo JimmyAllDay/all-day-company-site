@@ -16,7 +16,14 @@ const Contact = () => {
         Drop us a <span className={styles.underline}>line</span>
       </h1>
       <div className={styles.content}>
-        <div className={styles.imgContainer}></div>
+        <div className={styles.imgContainer}>
+          <Image
+            src="/contact.jpg"
+            alt=""
+            fill={true}
+            className={styles.image}
+          />
+        </div>
         <form className={styles.form}>
           <input type="text" placeholder="name" className={styles.input} />
           <input type="text" placeholder="email" className={styles.input} />

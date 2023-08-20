@@ -34,3 +34,19 @@ export const POST = async (request) => {
     return new NextResponse('Database Error', { status: 500 });
   }
 };
+
+export const DELETE = async (request) => {
+  console.log('delete request received on server');
+  const body = await request.json();
+
+  try {
+    await connect();
+
+    await Post.findByIdAndDelete(body);
+
+    return new NextResponse('Post has been deleted', { status: 201 });
+  } catch (error) {
+    console.log(error);
+    return new NextResponse('Database Error', { status: 500 });
+  }
+};

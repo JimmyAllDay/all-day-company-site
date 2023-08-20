@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --light-bg-color: #e8e8e8;
+  --light-text-color: #111;
+  --dark-bg-color: #272727;
+  --dark-text-color: #7a7a7a;
+  --dark-accent: #c1ff70;
+  --link-hover: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -19,19 +28,22 @@ a {
   text-decoration: none;
   color: inherit;
 }
+a:hover {
+  color: var(--link-hover);
+}
 
 .theme {
   transition: 1s all ease;
 }
 
 .light {
-  background-color: #e8e8e8;
-  color: #111;
+  background-color: var(--light-bg-color);
+  color: var(--light-text-color);
 }
 
 .dark {
-  background-color: #272727;
-  color: #7a7a7a;
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
 }
 
 .container {
