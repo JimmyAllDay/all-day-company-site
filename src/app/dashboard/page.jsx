@@ -139,7 +139,7 @@ export default withPageAuthRequired(
                           fill={true}
                           className={styles.img}
                           alt=""
-                          size="(max-width:300px)"
+                          s="(max-width:300px)"
                         />
                       </div>
                       <Link

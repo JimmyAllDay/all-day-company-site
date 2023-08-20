@@ -3,6 +3,7 @@ import styles from './page.module.css';
 import Link from 'next/link';
 import ImageWithFallback from '@/components/imageWithFallback/ImageWithFallback';
 import limitWords from '@/utils/helperFunctions';
+import { items } from './data.js';
 
 export const metadata = {
   title: 'All Day - Blog',
@@ -14,7 +15,8 @@ async function getData() {
     cache: 'no-store',
   });
   if (!res.ok) {
-    throw new Error('Failed to fetch data');
+    console.error('fetch error');
+    return items.error;
   }
 
   return res.json();
@@ -23,33 +25,30 @@ async function getData() {
 export default async function Blog() {
   const data = await getData();
   return (
-    console.log(data),
-    (
-      <div>
-        {data.map((item) => {
-          return (
-            <Link
-              href={`/blog/${item._id}`}
-              key={item._id}
-              className={styles.container}
-            >
-              <div className={styles.imageContainer}>
-                <ImageWithFallback
-                  src={item.image}
-                  fill={true}
-                  alt=""
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.content}>
-                <h1 className={styles.title}>{item.title}</h1>
-                <p className={styles.desc}>{item.desc}</p>
-                <p className={styles.text}>{limitWords(item.content, 30)}</p>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
-    )
+    <div>
+      {data.map((item) => {
+        return (
+          <Link
+            href={`/blog/${item._id}`}
+            key={item._id}
+            className={styles.container}
+          >
+            <div className={styles.imageContainer}>
+              <ImageWithFallback
+                src={item.image}
+                fill={true}
+                alt=""
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.content}>
+              <h1 className={styles.title}>{item.title}</h1>
+              <p className={styles.desc}>{item.desc}</p>
+              <p className={styles.text}>{limitWords(item.content, 30)}</p>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
   );
 }
