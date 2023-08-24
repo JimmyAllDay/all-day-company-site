@@ -10,21 +10,20 @@ export const metadata = {
   description: 'Tales from the web.',
 };
 
-// async function getData() {
-//   const res = await fetch(`${process.env.BASE_URL}/api/posts`, {
-//     cache: 'no-store',
-//   });
-//   if (!res.ok) {
-//     console.error('fetch error');
-//     return items.error;
-//   }
+async function getData() {
+  const res = await fetch(`${process.env.BASE_URL}/api/posts`, {
+    cache: 'no-store',
+  });
+  if (!res.ok) {
+    console.error('fetch error');
+    return items.error;
+  }
 
-//   return res.json();
-// }
+  return res.json();
+}
 
 export default async function Blog() {
-  // const data = await getData();
-  const data = items.error;
+  const data = await getData();
   return (
     <div>
       {data &&
