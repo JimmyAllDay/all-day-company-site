@@ -1,7 +1,7 @@
-import React from 'react';
 import Image from 'next/image';
 import Button from '@/components/button/Button';
 import styles from './page.module.css';
+import ContactForm from '@/components/contactForm/ContactForm';
 
 export const metadata = {
   title: 'All Day - Contact',
@@ -22,21 +22,10 @@ const Contact = () => {
             alt=""
             fill={true}
             className={styles.image}
+            priority
           />
         </div>
-        <form className={styles.form}>
-          <input type="text" placeholder="name" className={styles.input} />
-          <input type="text" placeholder="email" className={styles.input} />
-          <textarea
-            className={styles.textArea}
-            placeholder="message"
-            cols="30"
-            rows="10"
-          />
-          <div className={styles.buttonContainer}>
-            <Button url="#" label="Send message" />
-          </div>
-        </form>
+        <ContactForm />
       </div>
     </div>
   );
