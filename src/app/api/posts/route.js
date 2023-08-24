@@ -3,6 +3,7 @@ import connect from '@/utils/db';
 import Post from 'models/Post';
 
 export const GET = async (request) => {
+  console.log('GET');
   const url = new URL(request.url);
   const username = url.searchParams.get('username');
 
