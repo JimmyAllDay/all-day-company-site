@@ -3,7 +3,7 @@ import styles from './page.module.css';
 import ImageWithFallback from '@/components/imageWithFallback/ImageWithFallback';
 import { notFound } from 'next/navigation';
 import testImage from '../../../../public/allDayNavLogo-White.png';
-import { items } from './../data';
+import { items } from '../../../utils/data';
 
 async function getData(id) {
   const res = await fetch(`${process.env.BASE_URL}/api/posts/${id}`, {

@@ -3,7 +3,7 @@ import styles from './page.module.css';
 import Link from 'next/link';
 import ImageWithFallback from '@/components/imageWithFallback/ImageWithFallback';
 import limitWords from '@/utils/helperFunctions';
-import { items } from './data.js';
+import { items } from '../../utils/data.js';
 
 export const metadata = {
   title: 'All Day - Blog',
