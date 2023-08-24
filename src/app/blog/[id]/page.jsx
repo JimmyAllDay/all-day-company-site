@@ -3,21 +3,23 @@ import styles from './page.module.css';
 import ImageWithFallback from '@/components/imageWithFallback/ImageWithFallback';
 import { notFound } from 'next/navigation';
 import testImage from '../../../../public/allDayNavLogo-White.png';
+import { items } from './../data';
 
-async function getData(id) {
-  const res = await fetch(`${process.env.BASE_URL}/api/posts/${id}`, {
-    cache: 'no-store',
-  });
+// async function getData(id) {
+//   const res = await fetch(`${process.env.BASE_URL}/api/posts/${id}`, {
+//     cache: 'no-store',
+//   });
 
-  if (!res.ok) {
-    return notFound();
-  }
+//   if (!res.ok) {
+//     return notFound();
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 const BlogPost = async ({ params }) => {
-  const data = await getData(params.id);
+  // const data = await getData(params.id);
+  const data = items.error;
   return (
     <div className={styles.container}>
       <div className={styles.top}>
