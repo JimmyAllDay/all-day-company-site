@@ -20,7 +20,9 @@ async function getData() {
     });
     return items.error;
   }
-
+  res.text().then((text) => {
+    console.log(text);
+  });
   return res.json();
 }
 
