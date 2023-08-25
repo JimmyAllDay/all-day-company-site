@@ -15,6 +15,7 @@ async function getData() {
     cache: 'no-store',
   });
   if (!res.ok) {
+    console.log(res);
     return items.error;
   }
 
