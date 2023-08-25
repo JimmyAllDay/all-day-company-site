@@ -50,5 +50,3 @@ export const DELETE = async (request) => {
     return new NextResponse('Database Error', { status: 500 });
   }
 };
-
-export const revalidate = 3600;
