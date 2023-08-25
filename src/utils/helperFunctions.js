@@ -13,3 +13,11 @@ export function checkPexelsString(inputString) {
     inputString && inputString.startsWith('https://images.pexels.com/photos')
   );
 }
+
+//Not used yet
+export function getBaseUrl() {
+  if (typeof window !== 'undefined') return '';
+  const vc = process.env.BASE_URL;
+  if (vc) return vc;
+  return 'http://localhost:3000';
+}
