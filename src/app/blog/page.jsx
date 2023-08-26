@@ -11,7 +11,7 @@ export const metadata = {
 };
 
 async function getData() {
-  const res = await fetch(`${process.env.BASE_URL}/api/psts`, {
+  const res = await fetch(`${process.env.BASE_URL}/api/posts`, {
     cache: 'no-store',
   });
   if (!res.ok) {
