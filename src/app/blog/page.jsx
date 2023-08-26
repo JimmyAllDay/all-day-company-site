@@ -11,19 +11,17 @@ export const metadata = {
 };
 
 async function getData() {
-  const res = await fetch(`${process.env.BASE_URL}/api/posts`, {
+  const res = await fetch(`${process.env.BASE_URL}/api/psts`, {
     cache: 'no-store',
   });
   if (!res.ok) {
-    res.text().then((text) => {
-      throw new Error(text);
-    });
-    return items.error;
+    const errorText = await res.text();
+    return console.error(errorText);
   }
-  res.text().then((text) => {
-    console.log(text);
-  });
-  return res.json();
+
+  const jsonData = await res.json();
+  console.log('Response from API: ', jsonData);
+  return jsonData;
 }
 
 export default async function Blog() {
